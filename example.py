@@ -11,8 +11,12 @@ worksheet = workbook.add_worksheet()
 
 
 for i in range(n):
+
     row = 0
     col = 0
+    worksheet.write_row(row, col, ('ID','URI','Brand','Name','Price'))
+    row+=1
+
     page = '&page=' + str(i+1)
     req = requests.get("https://www.wildberries.ru/catalog/elektronika/noutbuki-pereferiya/noutbuki-ultrabuki?sort=popular"+page)
 
